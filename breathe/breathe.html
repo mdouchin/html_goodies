@@ -199,12 +199,14 @@
 			c.stroke();
 
 			c.beginPath();
+			document.getElementById("timer").innerText = focus;
 			c.arc(middle, focus, FOCUS_RADIUS, 0, TWO_PI, false);
 			c.fillStyle = 'lightblue';
 			c.fill();
 			c.lineWidth = FOCUS_LINE;
 			c.strokeStyle = '#3485ff';
 			c.stroke();
+
 
 		}
 
@@ -215,14 +217,14 @@
 		const timerElement = document.getElementById("timer")
 
 		setInterval(() => {
-		let minutes = parseInt(temps / 60, 10)
-		let secondes = parseInt(temps % 60, 10)
+		  let minutes = parseInt(temps / 60, 10)
+		  let secondes = parseInt(temps % 60, 10)
 
-		minutes = minutes < 10 ? "0" + minutes : minutes
-		secondes = secondes < 10 ? "0" + secondes : secondes
+		  minutes = minutes < 10 ? "0" + minutes : minutes
+		  secondes = secondes < 10 ? "0" + secondes : secondes
 
-		timerElement.innerText = `${minutes}:${secondes}`
-		temps = temps <= 0 ? 0 : temps - 1
+		  //timerElement.innerText = `${minutes}:${secondes}`
+		   temps = temps <= 0 ? 0 : temps - 1
 		}, 1000)
 	</script>
 
